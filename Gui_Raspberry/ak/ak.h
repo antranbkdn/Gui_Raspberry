@@ -34,7 +34,7 @@
 
 #define AK_COMMON_MSG_DATA_SIZE			(64)
 
-//define class ak by antran
+
 
 class ak:public QThread
 {
@@ -43,12 +43,15 @@ public:
     ak(){}
     ~ak(){}
     void run();
+
 signals:
+    void state_control(QString State_Control);
 
 public slots:
     void sendData();
     void Wait_Device_Register();
     void Init_gateway();
+
 private:
     int runmain();
 

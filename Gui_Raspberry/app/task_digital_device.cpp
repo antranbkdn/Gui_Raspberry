@@ -83,6 +83,11 @@ void* gw_task_digital_device_entry(void*) {
 
                     if (dv_gw_res_control.StateDigital ==  device_found->subdevice[dv_gw_res_control.SubID].state) {
                         APP_PRINT ("$CONTROL_OK\n");
+
+                //edit cho vui thoi
+                       QString State_Control = "OK";
+                       emit state_control(State_Control);
+                //----------------------------------------------------//
                         if (print_device_callback) {
                             print_device_callback((void*)device_found);
                         }

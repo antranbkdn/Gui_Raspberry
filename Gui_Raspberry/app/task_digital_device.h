@@ -6,6 +6,7 @@
 extern q_msg_t gw_task_digital_device_mailbox;
 extern void* gw_task_digital_device_entry(void*);
 
+
 typedef struct ControlDigital {
     uint8_t SourceID;
     uint8_t DestID;

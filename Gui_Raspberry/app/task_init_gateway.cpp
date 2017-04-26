@@ -7,6 +7,7 @@
 #include "../common/mac_address.h"
 
 q_msg_t gw_task_init_gateway_mailbox;
+
 static const uint8_t num_channels = 120;
 static const uint8_t num_reps = 100;         // so lan doi response
 static uint8_t current_channel = num_channels;
