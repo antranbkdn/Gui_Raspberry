@@ -31,6 +31,7 @@ static uint32_t ak_thread_started = 0;
 void ak::run()
 {
     runmain();
+
 }
 
 void ak::sendData()
@@ -53,6 +54,7 @@ void ak::Init_gateway()
 int ak::runmain() {
 	ak_thread_table_len = GW_TASK_LIST_LEN;
 	ak_thread_started = ak_thread_table_len;
+
 
 	task_init();
 

@@ -3,9 +3,15 @@
 
 #include "../ak/message.h"
 
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+#include <QThread>
+
 extern q_msg_t gw_task_digital_device_mailbox;
 extern void* gw_task_digital_device_entry(void*);
 
+extern bool isDataReceived; // add define
 
 typedef struct ControlDigital {
     uint8_t SourceID;

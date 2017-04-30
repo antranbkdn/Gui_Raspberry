@@ -26,6 +26,9 @@ q_msg_t gw_task_digital_device_mailbox;
 
 response_msg_t wait_response_fifo_buffer[WAIT_RESPONSE_MSG_FIFO_SIZE];
 fifo_t wait_response_msg_fifo;
+
+bool isDataReceived = false;
+
 static void print_device (void*);
 
 void* gw_task_digital_device_entry(void*) {
@@ -84,10 +87,15 @@ void* gw_task_digital_device_entry(void*) {
                     if (dv_gw_res_control.StateDigital ==  device_found->subdevice[dv_gw_res_control.SubID].state) {
                         APP_PRINT ("$CONTROL_OK\n");
 
+                        isDataReceived = true;
+                //QMetaObject::invokeMethod(this,SLOT())
                 //edit cho vui thoi
-                       QString State_Control = "OK";
-                       emit state_control(State_Control);
-                //----------------------------------------------------//
+                     //  QString State_Control = "OK";
+                      // emit state_control(State_Control);
+                    //   QMetaObject::invokeMethod(this,SLOT(setText));
+                 //    QMetaObject::invokeMethod(this,"print_device",Qt::BlockingQueuedConnection,Q_ARG();)
+                 //       QMetaObject::invokeMethod(this,SLOT(btn))
+                        //----------------------------------------------------//
                         if (print_device_callback) {
                             print_device_callback((void*)device_found);
                         }
